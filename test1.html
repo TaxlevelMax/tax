@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Device Location on Load</title>
+    <title>Get Device Location without Popup</title>
     <script>
         window.onload = function() {
             getLocation();
@@ -11,7 +11,7 @@
 
         function getLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
+                navigator.geolocation.watchPosition(showPosition, showError);
             } else {
                 alert("Geolocation is not supported by this browser.");
             }
